@@ -40,20 +40,21 @@ Before you can use the Weather Forecast API, you need to have the following prer
 
 ### API Endpoints
 
-    Get Available Cities
+#### Get Available Cities
 
-    Returns a list of available cities for weather forecasting.
+Returns a list of available cities for weather forecasting.
 
-    Endpoint: GET /api/getCities
+- **Endpoint**: `GET /api/getCities`
 
-    Get Average Temperatures
+#### Get Average Temperatures
 
-    Returns the average temperatures for specified cities within a given time range.
+Returns the average temperatures for specified cities within a given time range.
 
-    Endpoint: GET /api/getAverageTemperatures
+- **Endpoint**: `GET /api/getAverageTemperatures`
 
-    Query Parameters:
-        cityIds: List of city IDs (e.g., 1,2,3)
-        startTime: Range start time (MM/dd/yyyy HH:mm)
-        endTime: Range end time (MM/dd/yyyy HH:mm)
-        ascending: Boolean indicating ascending or descending order
+**Query Parameters:**
+
+- `cityIds`: List of city IDs (e.g., 1, 2, 3)
+- `startTime`: Range start time (MM/dd/yyyy HH:mm)
+- `endTime`: Range end time (MM/dd/yyyy HH:mm)
+- `ascending`: Boolean indicating ascending or descending order
