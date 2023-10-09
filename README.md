@@ -11,6 +11,7 @@ The Weather Forecast API is a .NET application that retrieves weather data from 
 - [Usage](#usage)
   - [API Endpoints](#api-endpoints)
   - [Configuration](#configuration)
+- [Contributing](#contributing)
 
 ## Introduction
 
@@ -84,25 +85,27 @@ To configure the API, you can modify the appsettings.json file. Make sure to pro
       }
     ]
    },
-   
-  You can use other Cities if you provide valid Names and Zip Codes, after that you have to update the database by running following
-  commands in package manager console
-  ```bash
-  add-migration NameOfYourMigration
-  update-database
-  ```
-  After that, your cities should be added to the database
+   ```
+    You can use other Cities if you provide valid Names and Zip Codes, after that you have to update the database by running following
+    commands in package manager console
+    ```bash
+    add-migration NameOfYourMigration
+    update-database
+    ```
+    After that, your cities should be added to the database
   
 2. Configure Weather Data Sync Options in appsettings.json
-   ```bash
-   "WeatherDataSyncOptions": {
-    "OpenWeatherApiUrl": "http://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&units=metric&appid={API key}",
-    "ApiKey": "YOUR_API_KEY",
-    "DaysForecasted": 5,
-    "SyncFrequencyHours": 3
-   }
-   ```
-  With these settings new weather forecast data is fetched every 3 hours using background service in OpenWeatherAPIClient Package -> WeatherDataSyncService.cs
-  and old data is invalidated.
-  Anti-corruption Layer is used to translate data fetched to Model classes.
+     ```bash
+     "WeatherDataSyncOptions": {
+      "OpenWeatherApiUrl": "http://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&units=metric&appid={API key}",
+      "ApiKey": "YOUR_API_KEY",
+      "DaysForecasted": 5,
+      "SyncFrequencyHours": 3
+     }
+     ```
+    With these settings new weather forecast data is fetched every 3 hours using background service in OpenWeatherAPIClient Package -> WeatherDataSyncService.cs
+    and old data is invalidated.
+    Anti-corruption Layer is used to translate data fetched to Model classes.
 
+## Contributing
+We welcome contributions from the community. If you want to contribute to the Weather Forecast API, please follow our contribution guidelines.
