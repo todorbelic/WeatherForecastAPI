@@ -63,7 +63,7 @@ Returns the average temperatures for specified cities within a given time range.
 To configure the API, you can modify the appsettings.json file. Make sure to provide your OpenWeatherMap API key in the configuration.
 
 1. Configure CityOptions in appsettings.json
-   ```bash
+   ```json
    "CityOptions": {
     "GeocodingApiUrl": "http://api.openweathermap.org/geo/1.0/direct?q={city name},{country code}&limit={limit}&appid={API key}",
     "ApiKey": "YOUR_API_KEY",
@@ -95,7 +95,7 @@ To configure the API, you can modify the appsettings.json file. Make sure to pro
     After that, your cities should be added to the database
   
 2. Configure Weather Data Sync Options in appsettings.json
-     ```bash
+     ```json
      "WeatherDataSyncOptions": {
       "OpenWeatherApiUrl": "http://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&units=metric&appid={API key}",
       "ApiKey": "YOUR_API_KEY",
