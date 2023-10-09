@@ -40,13 +40,13 @@ Before you can use the Weather Forecast API, you need to have the following prer
 
 ### API Endpoints
 
-#### Get Available Cities
+### Get Available Cities
 
 Returns a list of available cities for weather forecasting.
 
 - **Endpoint**: `GET /api/getCities`
 
-#### Get Average Temperatures
+### Get Average Temperatures
 
 Returns the average temperatures for specified cities within a given time range.
 
