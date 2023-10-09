@@ -11,8 +11,6 @@ The Weather Forecast API is a .NET application that retrieves weather data from 
 - [Usage](#usage)
   - [API Endpoints](#api-endpoints)
   - [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -58,3 +56,41 @@ Returns the average temperatures for specified cities within a given time range.
 - `startTime`: Range start time (MM/dd/yyyy HH:mm)
 - `endTime`: Range end time (MM/dd/yyyy HH:mm)
 - `ascending`: Boolean indicating ascending or descending order
+
+### Configuration
+
+To configure the API, you can modify the appsettings.json file. Make sure to provide your OpenWeatherMap API key in the configuration.
+
+1. Configure CityOptions in appsettings.json
+   ```bash
+   "CityOptions": {
+    "GeocodingApiUrl": "http://api.openweathermap.org/geo/1.0/direct?q={city name},{country code}&limit={limit}&appid={API key}",
+    "ApiKey": "YOUR_API_KEY",
+    "AvailableCities": [
+      {
+        "Name": "Novi Sad",
+        "ZipCode": "21000",
+        "CountryCode": "RS"
+      },
+      {
+        "Name": "Valjevo",
+        "ZipCode": "14000",
+        "CountryCode": "RS"
+      },
+      {
+        "Name": "Sombor",
+        "ZipCode": "25000",
+        "CountryCode": "RS"
+      }
+    ]
+   },
+   
+  You can use other Cities if you provide valid Names and Zip Codes, after that you have to update the database by running following
+  commands in package manager console
+  ```bash
+  add-migration NameOfYourMigration
+  update-database
+
+
+
+  
