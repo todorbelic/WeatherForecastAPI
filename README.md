@@ -90,7 +90,19 @@ To configure the API, you can modify the appsettings.json file. Make sure to pro
   ```bash
   add-migration NameOfYourMigration
   update-database
-
-
-
+  ```
+  After that, your cities should be added to the database
   
+2. Configure Weather Data Sync Options in appsettings.json
+   ```bash
+   "WeatherDataSyncOptions": {
+    "OpenWeatherApiUrl": "http://api.openweathermap.org/data/2.5/forecast?lat={latitude}&lon={longitude}&units=metric&appid={API key}",
+    "ApiKey": "YOUR_API_KEY",
+    "DaysForecasted": 5,
+    "SyncFrequencyHours": 3
+   }
+   ```
+  With these settings new weather forecast data is fetched every 3 hours using background service in OpenWeatherAPIClient Package -> WeatherDataSyncService.cs
+  and old data is invalidated.
+  Anti-corruption Layer is used to translate data fetched to Model classes.
+
